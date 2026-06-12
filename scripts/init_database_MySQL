@@ -1,0 +1,38 @@
+# /*
+
+# Create Data Warehouse Databases
+
+Script Purpose:
+This script creates three databases representing the
+Medallion Architecture layers used in the data warehouse:
+
+```
+- bronze: Raw data layer
+- silver: Cleaned and transformed data layer
+- gold   : Business-ready analytics layer
+
+If any of these databases already exist, they will be dropped and recreated.
+```
+
+WARNING:
+Running this script will permanently delete all data stored in the 'bronze', 'silver', and 'gold' databases.
+
+```
+Ensure that you have proper backups before executing this script.
+```
+
+=============================================================
+*/
+
+-- Drop existing databases
+DROP DATABASE IF EXISTS bronze;
+DROP DATABASE IF EXISTS silver;
+DROP DATABASE IF EXISTS gold;
+
+-- Create databases
+CREATE DATABASE bronze;
+CREATE DATABASE silver;
+CREATE DATABASE gold;
+
+-- Verify creation
+SHOW DATABASES;
